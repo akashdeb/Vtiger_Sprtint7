@@ -10,10 +10,10 @@ public class JavaUtility {
 		return date.toString().replace(" ", "_").replace(":", "_");
 	}
 	
-	public void generateRandomNo(int limit) {
+	public int generateRandomNo(int limit) {
 		
 		Random random=new Random();
-		random.nextInt(limit);
+		return random.nextInt(limit);
 	}
 
 }

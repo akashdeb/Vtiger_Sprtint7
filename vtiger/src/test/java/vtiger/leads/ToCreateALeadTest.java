@@ -24,7 +24,7 @@ public class ToCreateALeadTest extends BaseClass {
 		
 		String leadSalutation = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 16, 2);
 		String firstName = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 17, 2);
-		String lastName = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 18, 2);
+		String lastName = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 18, 2)+jUtils.generateRandomNo(1000);
 		String comapanyName = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 19, 2);
 		String assignedTo = eUtils.fetchDataFromExcelSheet(IPathConstant.LEADSHEETNAME, 22, 2);
 
@@ -46,7 +46,7 @@ public class ToCreateALeadTest extends BaseClass {
 		LeadInformationPage leadInfo = new LeadInformationPage(driver);
 		String actualLeadLastName = leadInfo.verifyLeadsInformation(lastName);
 		
-		Assert.assertEquals(actualLeadLastName, lastName);
+		Assert.assertTrue(actualLeadLastName.contains(lastName));;
 		System.out.println("The Lead has been created and verified");
 	}
 

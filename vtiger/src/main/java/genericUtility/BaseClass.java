@@ -25,6 +25,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public FileUtility fUtils = new FileUtility();
 	public ExcelUtility eUtils = new ExcelUtility();
+	public JavaUtility jUtils = new JavaUtility();
 	public static WebDriver sDriver;
 	public Connection connection;
 	@BeforeSuite
